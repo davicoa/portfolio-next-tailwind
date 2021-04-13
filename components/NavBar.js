@@ -1,9 +1,11 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link'
 
 const NavBar = () => {
 
     const [isOpen, setIsOpen] = useState(false);
+    
+    const [selected, setSelected] = useState(false);
   
     const toggle = () => {
         setIsOpen(!isOpen);
@@ -72,6 +74,13 @@ const NavBar = () => {
             </a>
         </Link>
     );
+
+    //armar el navbar selected
+    const style = {
+        default: `py-2 px-4 mx-1 inline-block focus:outline-none`,
+        selected: `text-white rounded bg-indigo-900`,
+        notSelected: `-mb-2 bg-white text-black`,
+    };
 
     return (
         <Navbar bgColor="bg-black" textColor="text-white">
