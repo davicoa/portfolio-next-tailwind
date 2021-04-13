@@ -81,10 +81,7 @@ const NavBar = () => {
               <Navbar.Link href="/about">About</Navbar.Link>
             </Navbar.Item>
             <Navbar.Item>
-              <Navbar.Link href="/Screen">Screen</Navbar.Link>
-            </Navbar.Item>
-            <Navbar.Item>
-              <Navbar.Link href="/Screen/frist">test</Navbar.Link>
+              <Navbar.Link href="/screen">Screen</Navbar.Link>
             </Navbar.Item>
           </Navbar.Nav>
         </Navbar.Collapse>
