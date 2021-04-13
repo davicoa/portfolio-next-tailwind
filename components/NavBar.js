@@ -16,15 +16,17 @@ const NavBar = () => {
             {children}
         </nav>
     );
-    /* You can wrap the a tag with Link and pass href to Link if you are using either Create-React-App, Next.js or Gatsby */
+    
     Navbar.Brand = ({ children, href }) => (
-        <a
-            href={href}
-            className="inline-block pt-1.5 pb-1.5 mr-4 cursor-pointer text-2xl font-bold whitespace-nowrap hover:text-gray-400"
-        >
-        <strong>{children}</strong>
-        </a>
+        <Link  href={`${href}`}>
+            <a
+                className="inline-block pt-1.5 pb-1.5 mr-4 cursor-pointer text-2xl font-bold whitespace-nowrap hover:text-gray-400"
+            >
+            <strong>{children}</strong>
+            </a>
+        </Link>
     );
+
     Navbar.Toggler = ({ toggle }) => (
         <button
             type="button"
@@ -36,6 +38,7 @@ const NavBar = () => {
         &#8801;
         </button>
     );
+
     Navbar.Collapse = ({ children, isOpen }) => {
         const className = isOpen
         ? 'visible opacity-1 transition-all ease-out duration-500 md:transition-none'
@@ -46,6 +49,7 @@ const NavBar = () => {
         </div>
         );
     };
+
     Navbar.Nav = ({ children, left, right, center }) => {
         const className = left
         ? 'block pl-0 mb-0 mr-auto md:flex md:pl-0 md:mb-0'
@@ -56,26 +60,30 @@ const NavBar = () => {
         : 'block pl-0 mb-0 mr-auto md:flex md:pl-0 md:mb-0';
         return <ul className={className}>{children}</ul>;
     };
+    
     Navbar.Item = ({ children }) => <li>{children}</li>;
     
     Navbar.Link = ({ children, href }) => (
         <Link  href={`${href}`}>
-        <a
-            className="block cursor-pointer py-1.5 md:py-1 px-4 md:px-2 hover:text-gray-400 font-medium"
-        >
-            {children}
-        </a>
+            <a
+                className="block cursor-pointer py-1.5 md:py-1 px-4 md:px-2 hover:text-gray-400 font-medium"
+            >
+                {children}
+            </a>
         </Link>
     );
 
     return (
         <Navbar bgColor="bg-black" textColor="text-white">
-        <Navbar.Brand href="#">Navbar</Navbar.Brand>
+        <Navbar.Brand href="/home">Navbar</Navbar.Brand>
         <Navbar.Toggler toggle={toggle} />
         <Navbar.Collapse isOpen={isOpen}>
           <Navbar.Nav right>
             <Navbar.Item>
-              <Navbar.Link href="/">Home</Navbar.Link>
+              <Navbar.Link href="/home">Home</Navbar.Link>
+            </Navbar.Item>
+            <Navbar.Item>
+              <Navbar.Link href="/home/ventanados">ventana dos</Navbar.Link>
             </Navbar.Item>
             <Navbar.Item>
               <Navbar.Link href="/about">About</Navbar.Link>
